@@ -24,4 +24,9 @@ public class BulletScript : MonoBehaviour {
 		// Destroy the bullet 
 		Destroy(gameObject);
 	}
+
+    void OnCollisionEnter2D(Collision2D collission)
+    {
+        Destroy(gameObject);
+    }
 }
