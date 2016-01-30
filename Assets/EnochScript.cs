@@ -25,6 +25,10 @@ public class EnochScript : MonoBehaviour {
         if (bulletCooldown > 0) {
             bulletCooldown--;
         }
+    }
+
+    void FixedUpdate()
+    {
         if (velocityX > 0)
         {
             velocityX -= 0.025f;
@@ -35,12 +39,14 @@ public class EnochScript : MonoBehaviour {
             velocityX += 0.025f;
             if (velocityX > 0) velocityX = 0;
         }
-        if (Input.GetKey (KeyCode.A)) {
-            velocityX -= 0.05f;    
-		}
-		else if (Input.GetKey (KeyCode.D)) {
-            velocityX += 0.05f;   
-		}
+        if (Input.GetKey(KeyCode.A))
+        {
+            velocityX -= 0.05f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            velocityX += 0.05f;
+        }
         if (velocityX >= 1)
         {
             velocityX = 1;
@@ -49,40 +55,55 @@ public class EnochScript : MonoBehaviour {
         {
             velocityX = -1;
         }
-
-        if (!IsGrounded() && velocityY > -3)
+        transform.Translate(new Vector2(velocityX, 0) * speed * Time.deltaTime);
+        if (IsGrounded() == true)
         {
-            velocityY -= .075f;
-        }
-        if (IsGrounded())
-        {
-            velocityY = 0;
             if (InGround())
             {
-                while (InGround())
+                transform.Translate(new Vector2(0, 1f));
+                int layerMask = 1 << 8;
+                layerMask = ~layerMask;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, 2, layerMask);
+                //Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), Vector2.down * 2);
+                if (hit)
                 {
-                    transform.Translate(new Vector2(0, 0.05f));
+                    float dist = -hit.distance + 1;
+                    transform.Translate(new Vector2(0, dist));
+                    velocityY = 0;
                 }
-
             }
-        }
-
-		if (Input.GetKey (KeyCode.W)) {
-            if (IsGrounded() == true) velocityY = 1.5f;
-            onGround = false;
-		}
-		else if (Input.GetKey (KeyCode.S)) {
-			//transform.Translate(-Vector2.up * speed * Time.deltaTime);  
-		}
-
-        transform.Translate(new Vector2(velocityX, velocityY) * speed * Time.deltaTime);
-        if(CloseBelow())
-        {
-            while (!IsGrounded())
+            
+        } else {
+            if (velocityY > -.8f) velocityY += -0.1f;
+            var vec = new Vector2(0, velocityY * speed * Time.deltaTime);
+            var vec2 = Vector2.down + vec;
+            Ray2D ray = new Ray2D(transform.position, vec2);
+            Ray2D ray2 = new Ray2D(transform.position, new Vector2(0,0));
+            if (velocityY <= 0) {
+                int layerMask = 1 << 8;
+                layerMask = ~layerMask;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, 2, layerMask);
+                //Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), Vector2.down * 2);
+                if (hit)
+                {
+                    float dist = -hit.distance + 1;
+                    transform.Translate(new Vector2(0, dist));
+                    velocityY = 0;
+                }
+                else
+                {
+                    transform.Translate(new Vector2(0, velocityY) * speed * Time.deltaTime);
+                }
+            } else
             {
-                transform.Translate(new Vector2(0, .05f));
+                transform.Translate(new Vector2(0, velocityY) * speed * Time.deltaTime);
             }
-            velocityY = 0;
+            
+        }
+        if (Input.GetKey(KeyCode.W) && IsGrounded())
+        {
+            velocityY = 1.5f;
+            transform.Translate(new Vector2(0, velocityY) * speed * Time.deltaTime);
         }
     }
 
@@ -96,8 +117,8 @@ public class EnochScript : MonoBehaviour {
     bool IsGrounded(){
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.01f, layerMask);
-        Debug.DrawRay(transform.position, Vector2.down * 1.01f, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.05f, layerMask);
+        Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.red);
         //Debug.Log(hit.collider.gameObject.name);
         return hit;
         //return Physics2D.Raycast(transform.position, Vector2.down, 1.01f, layerMask);
@@ -108,7 +129,7 @@ public class EnochScript : MonoBehaviour {
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1, layerMask);
-        Debug.DrawRay(transform.position, Vector2.down, Color.blue);
+        //Debug.DrawRay(transform.position, Vector2.down, Color.blue);
         //Debug.Log(hit.collider.gameObject.name);
         return hit;
     }
@@ -118,7 +139,7 @@ public class EnochScript : MonoBehaviour {
             int layerMask = 1 << 8;
             layerMask = ~layerMask;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down * 1.05f, 1, layerMask);
-            Debug.DrawRay(transform.position, Vector2.down * 1.05f, Color.green);
+            //Debug.DrawRay(transform.position, Vector2.down * 1.05f, Color.green);
             //Debug.Log(hit.collider.gameObject.name);
             return hit;
     }
