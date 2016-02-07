@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11428506}
   m_Layer: 0
   m_Name: gravityray-shot
-  m_TagString: Untagged
+  m_TagString: RayShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: RayShot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
