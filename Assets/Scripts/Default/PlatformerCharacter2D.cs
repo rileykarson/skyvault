@@ -48,14 +48,17 @@ using UnityEngine;
 			if (Input.GetKey (KeyCode.D))
 			{
 				m_Anim.SetInteger("Direction", 3); // Right animation
+				m_Anim.SetFloat("Speed", 1.0f);
 			}
 			else if (Input.GetKey (KeyCode.A))
 			{
 				m_Anim.SetInteger("Direction", 1); // Left animation
+				m_Anim.SetFloat("Speed", 1.0f);
 			}
 			else if (Input.GetKey (KeyCode.W))
 			{
 				m_Anim.SetInteger("Direction", 2); // Still animation
+				m_Anim.SetFloat("Speed", 0.0f);
 
 			}
 
@@ -91,6 +94,7 @@ using UnityEngine;
 
 				if (m_Rigidbody2D.velocity.x < 0.1 && m_Rigidbody2D.velocity.x > -0.1) {
 					m_Anim.SetInteger("Direction", 2); // Still animation
+					m_Anim.SetFloat("Speed", 0.0f);
 				}
                 // If the input is moving the player right and the player is facing left...
 				if (move > 0 && !m_FacingRight) {
