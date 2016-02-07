@@ -24,8 +24,10 @@ public class RayScript : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-    void OnCollisionEnter2D(Collision2D collission)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+    	if (collision.gameObject.tag != "Player") {
+    		Destroy(gameObject);
+    	}
     }
 }
