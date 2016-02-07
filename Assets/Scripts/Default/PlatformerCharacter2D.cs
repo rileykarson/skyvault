@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 
-namespace UnityStandardAssets._2D
-{
     public class PlatformerCharacter2D : MonoBehaviour
     {
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
@@ -110,5 +108,12 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
+        public int getFacingRight(){
+        	if (m_FacingRight) {
+        		return 1;
+        	} else {
+        		return -1;
+        	}
+        }
     }
-}
