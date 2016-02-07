@@ -20,7 +20,7 @@ public class TurretScript : MonoBehaviour {
 	{
 		if (bulletCooldown == 0) {
 			Debug.Log ("HIIIIIII");
-			Instantiate (bullet, transform.position + new Vector3(-0.6f, 0.2f, 0), Quaternion.identity);
+			Instantiate (bullet, transform.position + new Vector3(-0.58f, 0.4f, 0), Quaternion.identity);
 			//bullet.
 			//Instantiate(bullet, transform.position + new Vector3(.60f,-.1f,0), Quaternion.identity);
 			bulletCooldown = 100;
