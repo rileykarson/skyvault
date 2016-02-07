@@ -3,6 +3,9 @@ using System.Collections;
 
 public class RayAffectedScript : MonoBehaviour {
 
+	public float flippedY = 5;
+
+	private bool flipped = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,7 +19,12 @@ public class RayAffectedScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "RayShot") {
-        	transform.Translate(new Vector2(0, 1));
+        	if (flipped) {
+        		transform.Translate(new Vector2(0, flippedY) * -1);
+        	} else {
+        		transform.Translate(new Vector2(0, flippedY));
+        	}
+        	flipped = !flipped;	
         }
     }
 }
