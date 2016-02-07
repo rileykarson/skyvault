@@ -16,7 +16,7 @@ namespace UnityStandardAssets._2D
         private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        //private Animator m_Anim;            // Reference to the player's animator component.
+        private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
@@ -25,7 +25,7 @@ namespace UnityStandardAssets._2D
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
-            //m_Anim = GetComponent<Animator>();
+            m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
@@ -46,6 +46,21 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             //m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+
+			if (Input.GetKey (KeyCode.D))
+			{
+				m_Anim.SetInteger("Direction", 3); // Right animation
+			}
+			else if (Input.GetKey (KeyCode.A))
+			{
+				m_Anim.SetInteger("Direction", 1); // Left animation
+			}
+			else if (Input.GetKey (KeyCode.W))
+			{
+				m_Anim.SetInteger("Direction", 2); // Still animation
+
+			}
+
         }
 
 
@@ -76,18 +91,37 @@ namespace UnityStandardAssets._2D
                 // Move the character
                 m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
+				if (m_Rigidbody2D.velocity.x < 0.1 && m_Rigidbody2D.velocity.x > -0.1) {
+					m_Anim.SetInteger("Direction", 2); // Still animation
+				}
                 // If the input is moving the player right and the player is facing left...
-                if (move > 0 && !m_FacingRight)
-                {
-                    // ... flip the player.
-                    Flip();
-                }
+				if (move > 0 && !m_FacingRight) {
+					// ... flip the player.
+					Flip ();
+				}
                     // Otherwise if the input is moving the player left and the player is facing right...
-                else if (move < 0 && m_FacingRight)
-                {
-                    // ... flip the player.
-                    Flip();
-                }
+                else if (move < 0 && m_FacingRight) {
+					// ... flip the player.
+					Flip ();
+				}
+				/*var vertical = Input.GetAxis("Vertical");
+				var horizontal = Input.GetAxis("Horizontal");
+
+				if (!m_FacingRight)
+				{
+					m_Anim.SetInteger("Direction", 1); // Left animation
+				}
+				else if (m_FacingRight)
+				{
+					m_Anim.SetInteger("Direction", 3); // Right animation
+				}
+				else if (vertical > 0) {
+					m_Anim.SetInteger ("Direction", 2); // Stand still
+				} 
+				else if (vertical < 0) {
+					m_Anim.SetInteger ("Direction", 2); // Stand still
+				} */
+
             }
             // If the player should jump...
             if (m_Grounded && jump /*&& m_Anim.GetBool("Ground")*/)
@@ -104,11 +138,12 @@ namespace UnityStandardAssets._2D
         {
             // Switch the way the player is labelled as facing.
             m_FacingRight = !m_FacingRight;
+		
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
-            transform.localScale = theScale;
+            //Vector3 theScale = transform.localScale;
+            //theScale.x *= -1;
+            //transform.localScale = theScale;
         }
     }
 }

@@ -28,30 +28,34 @@ public class EnochScript : MonoBehaviour {
         if (bulletCooldown > 0) {
             bulletCooldown--;
         }
-
-		var vertical = Input.GetAxis("Vertical");
-		var horizontal = Input.GetAxis("Horizontal");
-
-		if (vertical > 0)
-		{
-			animator.SetInteger("Direction", 2);
-		}
-		else if (vertical < 0)
-		{
-			animator.SetInteger("Direction", 0);
-		}
-		else if (horizontal > 0)
-		{
-			animator.SetInteger("Direction", 1);
-		}
-		else if (horizontal < 0)
-		{
-			animator.SetInteger("Direction", 3);
-		}
+			
     }
 
     void FixedUpdate()
     {
+
+		var vertical = Input.GetAxis("Vertical");
+		var horizontal = Input.GetAxis("Horizontal");
+
+		if (vertical > 0) {
+			animator.SetInteger ("Direction", 2); // Stand still
+		} 
+		else if (vertical < 0) {
+			animator.SetInteger ("Direction", 2); // Stand still
+		} 
+		else if (horizontal > 0 && velocityX != 0)
+		{
+			animator.SetInteger("Direction", 3); // Left animation
+		}
+		else if (horizontal < 0 && velocityX != 0)
+		{
+			animator.SetInteger("Direction", 1); // Right animation
+		}
+
+
+		if (velocityX == 0) {
+			animator.SetInteger ("Direction", 2); // Stand still
+		}
         if (velocityX > 0)
         {
             velocityX -= 0.025f;
