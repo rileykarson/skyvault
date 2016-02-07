@@ -20,13 +20,14 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	// Gets called when the object goes out of the screen
-	void OnBecameInvisible() {  
-		// Destroy the bullet 
+	void OnBecameInvisible() {
+		// Destroy the bullet
 		Destroy(gameObject);
 	}
 
-    void OnCollisionEnter2D(Collision2D collission)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+		Debug.Log ("rip enoch");
         Destroy(gameObject);
     }
 }
