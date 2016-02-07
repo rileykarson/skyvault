@@ -13,7 +13,7 @@ public class RayAffectedScript : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "RayShot") {
         	transform.Translate(new Vector2(0, 1));
