@@ -19,10 +19,12 @@ public class TurretScript : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if (bulletCooldown == 0) {
-			Debug.Log ("HIIIIIII");
+			var playerObject = GameObject.Find("player-character-alpha");
+			Vector3 playerPos = playerObject.transform.position;
+			Vector3 line = playerPos - transform.position;
+
+
 			Instantiate (bullet, transform.position + new Vector3(-0.58f, 0.4f, 0), Quaternion.identity);
-			//bullet.
-			//Instantiate(bullet, transform.position + new Vector3(.60f,-.1f,0), Quaternion.identity);
 			bulletCooldown = 100;
 		}
 		else {

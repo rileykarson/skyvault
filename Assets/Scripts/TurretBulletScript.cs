@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletScript : MonoBehaviour {
+public class TurretBulletScript : MonoBehaviour {
 	float speed = 16f;
 	// Use this for initialization
 	void Start () {
-		var playerObject = GameObject.Find("player-character 1");
+		var playerObject = GameObject.Find("player-character-alpha");
 		Vector3 playerPos = playerObject.transform.position;
 		Debug.Log("Current player position: " + playerPos);
 		Vector3 pz = playerPos - transform.position;
