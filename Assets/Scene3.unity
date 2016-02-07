@@ -178,7 +178,9 @@ GameObject:
   - 212: {fileID: 1650675468}
   - 114: {fileID: 1650675467}
   - 50: {fileID: 1650675471}
-  - 61: {fileID: 1650675470}
+  - 58: {fileID: 1650675470}
+  - 61: {fileID: 1650675472}
+  - 95: {fileID: 1650675473}
   m_Layer: 0
   m_Name: turret1_102x102
   m_TagString: Untagged
@@ -235,13 +237,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650675466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: -1.35, z: 0}
+  m_LocalPosition: {x: 15.02, y: 3.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!61 &1650675470
-BoxCollider2D:
+--- !u!58 &1650675470
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -251,9 +253,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.075041294, y: -0.11896038}
+  m_Offset: {x: 0.06, y: -0.1}
   serializedVersion: 2
-  m_Size: {x: 0.86991715, y: 0.7820792}
+  m_Radius: 0.36232233
 --- !u!50 &1650675471
 Rigidbody2D:
   serializedVersion: 2
@@ -270,7 +272,38 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 3
+  m_Constraints: 5
+--- !u!61 &1650675472
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1650675466}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.08, y: -0.3}
+  serializedVersion: 2
+  m_Size: {x: 1.02, y: 0.4}
+--- !u!95 &1650675473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1650675466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28a4f85230bf743f5b35aa46aef89de6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1746281099
 Prefab:
   m_ObjectHideFlags: 0
