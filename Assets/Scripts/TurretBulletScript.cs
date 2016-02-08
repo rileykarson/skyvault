@@ -5,7 +5,7 @@ public class TurretBulletScript : MonoBehaviour {
 	float speed = 16f;
 	// Use this for initialization
 	void Start () {
-		var playerObject = GameObject.Find("player-character-alpha");
+		var playerObject = GameObject.Find("player-character");
 		Vector3 playerPos = playerObject.transform.position;
 		Vector3 pz = playerPos - transform.position;
 		pz.z = 0;

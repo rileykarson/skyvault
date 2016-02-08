@@ -21,7 +21,7 @@ public class TurretScript : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		var playerObject = GameObject.Find("player-character-alpha");
+		var playerObject = GameObject.Find("player-character");
 		Vector3 playerPos = playerObject.transform.position;
 		Vector3 line = playerPos - transform.position;
 		Vector3 forward = transform.forward;
