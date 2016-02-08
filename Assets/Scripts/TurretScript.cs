@@ -6,11 +6,13 @@ public class TurretScript : MonoBehaviour {
 
 	int bulletCooldown = 0;
 	public GameObject bullet;
-	private Animator m_Anim; 
+	private Animator m_Anim;
+	public GameObject playerObject;
 
 	// Use this for initialization
 	void Start () {
 		bulletCooldown = 0;
+		playerObject = GameObject.Find("player-character");
 		m_Anim = GetComponent<Animator>();
 	}
 
@@ -21,7 +23,6 @@ public class TurretScript : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		var playerObject = GameObject.Find("player-character");
 		Vector3 playerPos = playerObject.transform.position;
 		Vector3 line = playerPos - transform.position;
 		Vector3 forward = transform.forward;
@@ -35,9 +36,6 @@ public class TurretScript : MonoBehaviour {
 		forward2D.y = forward.y;
 
 		float angle = Vector2.Angle(line2D, forward2D);
-		Debug.Log ("Vector:  " + line2D);
-		Debug.Log ("Forward:  " + forward2D);
-		Debug.Log("Angle:  " + angle);
 
 		float xCoord = 0;
 		float yCoord = 0;
