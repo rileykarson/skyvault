@@ -155,4 +155,8 @@ using UnityEngine;
         		return -1;
         	}
         }
+
+	public int getVerticalFlip(){
+		return (int)transform.localScale.y;
+	}
     }
