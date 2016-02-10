@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca16dfe325764ca9859e0d8cd5bcc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 183300, guid: b52612f931273b045ab4bcc006123874, type: 2}
+  bullet: {fileID: 183300, guid: 16b82e6ea940f4c41b718e7cc43c5c36, type: 2}
+  playerObject: {fileID: 0}
 --- !u!212 &21234058
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +156,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 183300, guid: 16b82e6ea940f4c41b718e7cc43c5c36, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175260}

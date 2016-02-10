@@ -13,6 +13,10 @@ public class TurretBulletScript : MonoBehaviour {
 		var ratioy = pz.y / (Mathf.Abs(pz.x) + Mathf.Abs(pz.y));
 		var rigid = GetComponent<Rigidbody2D>();
 		rigid.velocity = new Vector2 (speed*ratiox, speed*ratioy);
+		if (rigid.velocity != Vector2.zero) {
+			float angle = Mathf.Atan2(rigid.velocity.y, rigid.velocity.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		}
 	}
 	
 	// Update is called once per frame
