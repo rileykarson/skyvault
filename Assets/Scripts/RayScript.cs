@@ -3,8 +3,10 @@ using System.Collections;
 
 public class RayScript : MonoBehaviour {
 	public float speed = 16f;
+	public GameObject particle;
 	// Use this for initialization
 	Rigidbody2D rigi;
+
 
 	void Start () {
 		Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -35,6 +37,7 @@ public class RayScript : MonoBehaviour {
     {
     	if (collision.gameObject.tag != "Player") {
     		Destroy(gameObject);
+			Instantiate(particle, transform.position, Quaternion.identity);
     	}
     }
 }
