@@ -11,7 +11,6 @@ public class RayScript : MonoBehaviour {
 	public AudioClip TammyLaser = new AudioClip();
 
 	void Start () {
-		//AudioSource.DontDestroyOnLoad (TammyLaser);
 		AudioSource.PlayClipAtPoint (TammyLaser, new Vector3 (0, 0, 0));
 		Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		pz.z = 0;
