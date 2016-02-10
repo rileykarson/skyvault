@@ -21,8 +21,9 @@ public class TammyScript : MonoBehaviour {
     void FixedUpdate()
     {
 		if (Input.GetMouseButton(0) && bulletCooldown == 0) {
-			Instantiate(bullet, transform.position + new Vector3(.60f,-.1f,0) * player.getFacingRight(), Quaternion.identity);
-			Instantiate(particle, transform.position + new Vector3(.60f,-.1f,0) * player.getFacingRight(), Quaternion.identity);
+			Instantiate(bullet, transform.position + (new Vector3(0, -.1f) *player.getVerticalFlip() + new Vector3(.60f,0,0) * player.getFacingRight()), Quaternion.identity);
+			GameObject par = Instantiate(particle, transform.position + (new Vector3(0, -.1f)*player.getVerticalFlip() + new Vector3(.60f,0,0) * player.getFacingRight()), Quaternion.identity) as GameObject;
+			par.transform.parent = transform;
 			bulletCooldown = 30;
 		}
 		if (bulletCooldown > 0) {
