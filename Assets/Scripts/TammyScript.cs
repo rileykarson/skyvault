@@ -5,6 +5,7 @@ public class TammyScript : MonoBehaviour {
 
     int bulletCooldown = 0;
 	public GameObject bullet;
+	public GameObject particle;
 	PlatformerCharacter2D player;
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class TammyScript : MonoBehaviour {
     {
 		if (Input.GetMouseButton(0) && bulletCooldown == 0) {
 			Instantiate(bullet, transform.position + new Vector3(.60f,-.1f,0) * player.getFacingRight(), Quaternion.identity);
+			Instantiate(particle, transform.position + new Vector3(.60f,-.1f,0) * player.getFacingRight(), Quaternion.identity);
 			bulletCooldown = 30;
 		}
 		if (bulletCooldown > 0) {
