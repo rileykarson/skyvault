@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Kill
+  - RayShot
+  - Floor
+  - MovingGoo
   layers:
   - Default
   - TransparentFX
