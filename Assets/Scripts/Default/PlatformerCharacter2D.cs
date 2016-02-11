@@ -37,8 +37,9 @@ using UnityEngine;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
-                    m_Grounded = true;
+				if (colliders [i].gameObject != gameObject) {
+					m_Grounded = true;
+				}
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -131,7 +132,7 @@ using UnityEngine;
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //m_Anim.SetBool("Ground", false);
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) * getVerticalFlip());
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) * getVerticalFlip());
             }
         }
 
@@ -156,7 +157,7 @@ using UnityEngine;
         	}
         }
 
-	public int getVerticalFlip(){
-		return (int)transform.localScale.y;
-	}
+		public int getVerticalFlip(){
+			return (int)transform.localScale.y;
+		}
     }
