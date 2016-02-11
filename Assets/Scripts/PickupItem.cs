@@ -22,8 +22,8 @@ public class PickupItem : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		pickupCount++;
-		if (textRef != null) textRef.text = "Score: " + pickupCount;
-		print("number picked up: " + pickupCount);
+		if (textRef != null) textRef.text = "Score: " + pickupCount*1000;
+		//print("number picked up: " + pickupCount);
 		Destroy (gameObject);
 	}
 }
