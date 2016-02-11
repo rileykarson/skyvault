@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 452430}
   - 212: {fileID: 21222214}
   - 61: {fileID: 6182894}
+  - 114: {fileID: 11461938}
   m_Layer: 0
   m_Name: floor-goo
   m_TagString: Untagged
@@ -38,11 +39,28 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 8f50de8d362fd2b4c96af1ee69b28fc6, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11461938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d13b160f0f54db893a9eb6056f4967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  midYOffset: 2.5
+  endYOffset: 5
+  flippedY: 5
+  go: {fileID: 151284, guid: 190ad8f7780bf4bf89498d67cdf1c202, type: 2}
+  plain: {fileID: 21300000, guid: 0890e0072f6074d00a4ff294770e0f8c, type: 3}
+  noGoo: {fileID: 198478, guid: e5394e43170f8c64cb13830fdf2fbba8, type: 2}
 --- !u!212 &21222214
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -84,6 +102,28 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 8f50de8d362fd2b4c96af1ee69b28fc6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fee096bcff174b0ebd1e08f97fc9d31,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: go
+      value: 
+      objectReference: {fileID: 151284, guid: 190ad8f7780bf4bf89498d67cdf1c202, type: 2}
+    - target: {fileID: 0}
+      propertyPath: plain
+      value: 
+      objectReference: {fileID: 21300000, guid: 0890e0072f6074d00a4ff294770e0f8c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: noGoo
+      value: 
+      objectReference: {fileID: 198478, guid: e5394e43170f8c64cb13830fdf2fbba8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188132}

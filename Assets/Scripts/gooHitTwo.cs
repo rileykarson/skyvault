@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KillScript : MonoBehaviour {
+public class gooHitTwo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +15,8 @@ public class KillScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Player") {
-			Application.LoadLevel ("StartScreen");
+		if (collision.gameObject.tag == "Floor") {
+			Destroy(gameObject);
 		}
 	}
 }
