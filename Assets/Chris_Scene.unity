@@ -416,6 +416,10 @@ Prefab:
       propertyPath: m_WhatIsGround.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 11471482, guid: 534a8374121bfbc43b093b083235b916, type: 2}
+      propertyPath: m_AirControl
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 534a8374121bfbc43b093b083235b916, type: 2}
   m_IsPrefabParent: 0
