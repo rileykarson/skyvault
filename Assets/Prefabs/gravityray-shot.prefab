@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 16
   particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
+  TammyLaser: {fileID: 8300000, guid: 2694a2b04f8184b5da9931a16deb991d, type: 3}
 --- !u!212 &21259940
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -197,6 +198,26 @@ Prefab:
       propertyPath: particle
       value: 
       objectReference: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Priority
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TammyLaser
+      value: 
+      objectReference: {fileID: 8300000, guid: 2694a2b04f8184b5da9931a16deb991d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183300}

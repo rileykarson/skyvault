@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class RayScript : MonoBehaviour {
 	public float speed = 16f;
 	public GameObject particle;
 	// Use this for initialization
 	Rigidbody2D rigi;
 
+	public AudioClip TammyLaser = new AudioClip();
 
 	void Start () {
+		AudioSource.PlayClipAtPoint (TammyLaser, new Vector3 (0, 0, 0));
 		Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		pz.z = 0;
 		var ratiox = pz.x / (Mathf.Abs(pz.x) + Mathf.Abs(pz.y));

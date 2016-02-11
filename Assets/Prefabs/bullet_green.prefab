@@ -12,8 +12,9 @@ GameObject:
   - 50: {fileID: 5019662}
   - 61: {fileID: 6172798}
   - 114: {fileID: 11497012}
+  - 114: {fileID: 11486348}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: bullet_green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +63,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.27}
+--- !u!114 &11486348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efca3f7b8f8674074b230285c60af041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32449653b97d412a8fe924d9cc4dc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurretLaser: {fileID: 8300000, guid: 2c42d5edcc9014519930305411d09a33, type: 3}
 --- !u!212 &21259940
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7162105f2132c42e5af9f1a8a86e047d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb3e907462365446295fc6c682dbc83d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +130,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7162105f2132c42e5af9f1a8a86e047d,
+      objectReference: {fileID: 21300000, guid: fb3e907462365446295fc6c682dbc83d,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -136,17 +149,9 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_audioClip
+      propertyPath: TurretLaser
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 2c42d5edcc9014519930305411d09a33, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183300}

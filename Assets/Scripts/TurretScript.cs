@@ -27,6 +27,8 @@ public class TurretScript : MonoBehaviour {
 		Vector3 line = playerPos - transform.position;
 		Vector3 forward = transform.forward;
 
+		bool turretEnabled = Vector3.Distance (playerPos, transform.position) < 10;
+
 		Vector2 line2D;
 		line2D.x = line.x;
 		line2D.y = line.y;
@@ -81,8 +83,10 @@ public class TurretScript : MonoBehaviour {
 			m_Anim.SetFloat("Blend", 7);
 		}
 		if (bulletCooldown == 0) {
-			Instantiate (bullet, transform.position + new Vector3(xCoord, yCoord, zCoord), Quaternion.identity);
-			bulletCooldown = 100;
+			if (turretEnabled) {
+				Instantiate (bullet, transform.position + new Vector3 (xCoord, yCoord, zCoord), Quaternion.identity);
+				bulletCooldown = 100;
+			}
 		}
 		else {
 			bulletCooldown--;
