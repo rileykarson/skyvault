@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 468062}
   - 212: {fileID: 21247124}
   - 61: {fileID: 6131520}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 408720}
   - 212: {fileID: 21208532}
   - 61: {fileID: 6160810}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 430022}
   - 212: {fileID: 21253710}
   - 61: {fileID: 6168960}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 490294}
   - 212: {fileID: 21292608}
   - 61: {fileID: 6165146}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 443770}
   - 212: {fileID: 21279576}
   - 61: {fileID: 6111982}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 454248}
   - 212: {fileID: 21281302}
   - 61: {fileID: 6177062}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475950}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 4: {fileID: 499652}
   - 212: {fileID: 21278784}
   - 61: {fileID: 6188432}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - 4: {fileID: 400440}
   - 212: {fileID: 21224346}
   - 61: {fileID: 6157732}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 161924}

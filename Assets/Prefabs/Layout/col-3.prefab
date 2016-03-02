@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 445506}
   - 212: {fileID: 21273508}
   - 61: {fileID: 6119764}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 415866}
   - 212: {fileID: 21269322}
   - 61: {fileID: 6134786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 426316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: col-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 4: {fileID: 401762}
   - 212: {fileID: 21288800}
   - 61: {fileID: 6142178}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: floor-tile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163596}

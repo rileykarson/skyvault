@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6139168}
   - 114: {fileID: 11465082}
   - 50: {fileID: 5012860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spikes (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spikestrip-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 61: {fileID: 6166800}
   - 114: {fileID: 11485866}
   - 50: {fileID: 5039622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spikes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 61: {fileID: 6102688}
   - 114: {fileID: 11422848}
   - 50: {fileID: 5005308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - 61: {fileID: 6108014}
   - 114: {fileID: 11427372}
   - 50: {fileID: 5006446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spikes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143550}
