@@ -1,22 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class KillScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	void OnCollisionEnter2D(Collision2D collision)
+	IEnumerator OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")) {
+			Application.LoadLevel ("YouLose");
+			yield return new WaitForSeconds(5);
 			Application.LoadLevel("StartScreen");
 		}
 	}
+		
 }
