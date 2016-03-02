@@ -15,8 +15,8 @@ public class KillScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Player") {
-			Application.LoadLevel ("StartScreen");
+		if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")) {
+			Application.LoadLevel("StartScreen");
 		}
 	}
 }

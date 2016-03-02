@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434354}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cool-floor-12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 488376}
   - 212: {fileID: 21292850}
   - 61: {fileID: 6150462}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cool-floor-3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 488094}
   - 212: {fileID: 21295436}
   - 61: {fileID: 6180160}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cool-floor-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 4: {fileID: 448950}
   - 212: {fileID: 21244972}
   - 61: {fileID: 6183016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cool-floor-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 4: {fileID: 417896}
   - 212: {fileID: 21279204}
   - 61: {fileID: 6158530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cool-floor-3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103870}
