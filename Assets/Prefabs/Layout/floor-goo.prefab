@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11461938}
   m_Layer: 0
   m_Name: floor-goo
-  m_TagString: Untagged
+  m_TagString: Bouncy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,10 @@ Prefab:
       propertyPath: noGoo
       value: 
       objectReference: {fileID: 198478, guid: e5394e43170f8c64cb13830fdf2fbba8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Bouncy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188132}

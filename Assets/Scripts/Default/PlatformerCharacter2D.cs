@@ -17,6 +17,7 @@ using UnityEngine;
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	private bool bounce = false;
 
         private void Awake()
         {
@@ -31,6 +32,7 @@ using UnityEngine;
         private void FixedUpdate()
         {
             m_Grounded = false;
+		bounce = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -40,6 +42,9 @@ using UnityEngine;
 				if (colliders [i].gameObject != gameObject) {
 					m_Grounded = true;
 				}
+			if (colliders [i].gameObject.tag == "Bouncy") {
+				bounce = true;
+			}
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -109,23 +114,6 @@ using UnityEngine;
 					// ... flip the player.
 					Flip ();
 				}
-				/*var vertical = Input.GetAxis("Vertical");
-				var horizontal = Input.GetAxis("Horizontal");
-
-				if (!m_FacingRight)
-				{
-					m_Anim.SetInteger("Direction", 1); // Left animation
-				}
-				else if (m_FacingRight)
-				{
-					m_Anim.SetInteger("Direction", 3); // Right animation
-				}
-				else if (vertical > 0) {
-					m_Anim.SetInteger ("Direction", 2); // Stand still
-				} 
-				else if (vertical < 0) {
-					m_Anim.SetInteger ("Direction", 2); // Stand still
-				} */
 
             }
             // If the player should jump...
@@ -134,7 +122,7 @@ using UnityEngine;
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //m_Anim.SetBool("Ground", false);
-			if (m_Rigidbody2D.velocity.y <= .1f && m_Rigidbody2D.velocity.y >= -.1f) {
+			if (bounce || (m_Rigidbody2D.velocity.y <= .1f && m_Rigidbody2D.velocity.y >= -.1f)) {
 				m_Rigidbody2D.AddForce (new Vector2 (0f, m_JumpForce) * getVerticalFlip ());
 			}
             }

@@ -8,6 +8,7 @@ TagManager:
   - RayShot
   - Floor
   - MovingGoo
+  - Bouncy
   layers:
   - Default
   - TransparentFX
