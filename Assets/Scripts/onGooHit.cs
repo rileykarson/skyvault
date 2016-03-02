@@ -23,7 +23,8 @@ public class onGooHit : MonoBehaviour {
 			Destroy(gameObject);
 			GameObject obj = Instantiate (goo, playerPos, Quaternion.identity) as GameObject;
 			Vector3 theScale = obj.transform.localScale;
-			if (collision.transform.position.y > theScale.y){
+			Vector3 thePosition = obj.transform.position;
+			if (collision.transform.position.y <= thePosition.y){
 				theScale.y *= -1;
 				obj.transform.localScale = theScale;
 			}
