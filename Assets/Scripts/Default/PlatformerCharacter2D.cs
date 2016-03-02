@@ -86,7 +86,9 @@ using UnityEngine;
             {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
                 move = (crouch ? move*m_CrouchSpeed : move);
-
+			if (GetComponent<SelfGravity> ().flipping) {
+				move = 0f;
+			}
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 //m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
@@ -132,8 +134,11 @@ using UnityEngine;
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //m_Anim.SetBool("Ground", false);
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) * getVerticalFlip());
+			if (m_Rigidbody2D.velocity.y <= .1f && m_Rigidbody2D.velocity.y >= -.1f) {
+				m_Rigidbody2D.AddForce (new Vector2 (0f, m_JumpForce) * getVerticalFlip ());
+			}
             }
+
         }
 
 

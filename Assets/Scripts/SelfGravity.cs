@@ -7,6 +7,7 @@ public class SelfGravity : MonoBehaviour {
 	private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
+	public bool flipping = false;
 
 	int cooldown = 0;
 	Rigidbody2D body;
@@ -31,11 +32,15 @@ public class SelfGravity : MonoBehaviour {
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
+			if (colliders [i].gameObject != gameObject) {
 				m_Grounded = true;
+				flipping = false;
+			}
+
 		}
 		if (Input.GetKey("q") && cooldown == 0 && m_Grounded) {
 			//Debug.Log ("gravity halp");
+			flipping = true;
 			body.gravityScale *= -1;
 			cooldown = 25;
 			// Multiply the player's y local scale by -1.
