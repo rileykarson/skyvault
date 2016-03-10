@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 183300, guid: 61cda3cfabfbb5540b412b383fe9e4ff, type: 2}
-  particle: {fileID: 112210, guid: 994ea2741f1b8c74d8530c55183c0a31, type: 2}
+  particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
 --- !u!114 &11418516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +183,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   flipping: 0
-  particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
+  particle: {fileID: 112210, guid: 994ea2741f1b8c74d8530c55183c0a31, type: 2}
 --- !u!114 &11445384
 MonoBehaviour:
   m_ObjectHideFlags: 1
