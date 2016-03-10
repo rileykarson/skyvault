@@ -44,7 +44,7 @@ public class SelfGravity : MonoBehaviour {
 			}
 
 		}
-		if (Input.GetKey("q") && cooldown == 0 && m_Grounded) {
+		if ((Input.GetKey("q") || Input.GetMouseButton(1)) && cooldown == 0 && m_Grounded) {
 			//Debug.Log ("gravity halp");
 			flipping = true;
 			body.gravityScale *= -1;
