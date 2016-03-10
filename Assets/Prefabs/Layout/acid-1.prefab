@@ -144,7 +144,7 @@ MonoBehaviour:
   midYOffset: 2.5
   endYOffset: 5
   flippedY: 5
-  go: {fileID: 151284, guid: 190ad8f7780bf4bf89498d67cdf1c202, type: 2}
+  go: {fileID: 133012, guid: 7e495ac60894ce748aa3f2a632ceee13, type: 2}
   plain: {fileID: 21300000, guid: 0890e0072f6074d00a4ff294770e0f8c, type: 3}
   noGoo: {fileID: 198478, guid: e5394e43170f8c64cb13830fdf2fbba8, type: 2}
 --- !u!212 &21265700
@@ -183,7 +183,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: go
+      value: 
+      objectReference: {fileID: 133012, guid: 7e495ac60894ce748aa3f2a632ceee13, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190320}

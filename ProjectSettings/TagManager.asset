@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - MovingGoo
   - Bouncy
+  - MovingAcid
   layers:
   - Default
   - TransparentFX
