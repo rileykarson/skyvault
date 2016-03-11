@@ -7,8 +7,8 @@ public class TurretBulletScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		AudioSource.PlayClipAtPoint (TurretLaser, new Vector3 (0, 0, 0));
+
 		var playerObject = GameObject.Find("player-character");
 		Vector3 playerPos = playerObject.transform.position;
 		Vector3 pz = playerPos - transform.position;
@@ -25,7 +25,7 @@ public class TurretBulletScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+						
 	}
 
 	// Gets called when the object goes out of the screen
