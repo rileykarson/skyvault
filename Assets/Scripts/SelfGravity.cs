@@ -8,7 +8,9 @@ public class SelfGravity : MonoBehaviour {
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	public bool flipping = false;
+	public GameObject particle;
 
+	private GameObject particleActive = null;
 	int cooldown = 0;
 	Rigidbody2D body;
 
@@ -35,10 +37,14 @@ public class SelfGravity : MonoBehaviour {
 			if (colliders [i].gameObject != gameObject) {
 				m_Grounded = true;
 				flipping = false;
+				if (particleActive != null) {
+					Destroy (particleActive);
+					particleActive = null;
+				}
 			}
 
 		}
-		if (Input.GetKey("q") && cooldown == 0 && m_Grounded) {
+		if ((Input.GetKey("q") || Input.GetMouseButton(1)) && cooldown == 0 && m_Grounded) {
 			//Debug.Log ("gravity halp");
 			flipping = true;
 			body.gravityScale *= -1;
@@ -47,6 +53,9 @@ public class SelfGravity : MonoBehaviour {
 			Vector3 theScale = transform.localScale;
 			theScale.y *= -1;
 			transform.localScale = theScale;
+			particleActive = Instantiate(particle, transform.position, Quaternion.identity) as GameObject;
+			particleActive.transform.parent = transform;
+
 		} else if (cooldown > 0) {
 			cooldown--;
 		}

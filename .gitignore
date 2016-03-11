@@ -30,3 +30,5 @@ sysinfo.txt
 Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
 Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
 ProjectSettings/ProjectSettings.asset
+Assets/Scenes/Untracked
+Assets/Scenes/Untracked.meta
