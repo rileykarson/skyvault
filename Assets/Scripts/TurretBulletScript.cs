@@ -4,6 +4,7 @@ using System.Collections;
 public class TurretBulletScript : MonoBehaviour {
 	float speed = 16f;
 	public AudioClip TurretLaser = new AudioClip();
+	public GameObject particle;
 
 	// Use this for initialization
 	void Start () {
@@ -37,5 +38,6 @@ public class TurretBulletScript : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+		Instantiate(particle, transform.position, Quaternion.identity);
     }
 }
