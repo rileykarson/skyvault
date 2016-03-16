@@ -5,8 +5,9 @@ public class onLose : MonoBehaviour {
 
 	// Use this for initialization
 	IEnumerator Start () {
+		State.nextLevel ();
 		yield return new WaitForSeconds(5);
-		Application.LoadLevel("StartScreen");
+		UnityEngine.SceneManagement.SceneManager.LoadScene (State.nextlevel);
 	}
 	
 	// Update is called once per frame
