@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 417702}
   - 212: {fileID: 21235558}
   - 114: {fileID: 11406342}
+  - 95: {fileID: 9542408}
+  - 50: {fileID: 5061082}
   m_Layer: 0
   m_Name: SecurityWalkRight_100x200
   m_TagString: Untagged
@@ -29,6 +31,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5061082
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178504}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &9542408
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e419a7b8081a046f9b1951b234c2eacc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11406342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972b859e773444c208ebdeffb88f8e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 417702}
   bullet: {fileID: 183300, guid: 16b82e6ea940f4c41b718e7cc43c5c36, type: 2}
   particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
 --- !u!212 &21235558
@@ -79,7 +115,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e419a7b8081a046f9b1951b234c2eacc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 417702}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178504}
