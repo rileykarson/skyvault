@@ -45,6 +45,7 @@ GameObject:
   - 224: {fileID: 22455546}
   - 222: {fileID: 22228656}
   - 114: {fileID: 11490982}
+  - 114: {fileID: 11439342}
   m_Layer: 5
   m_Name: score-text
   m_TagString: Untagged
@@ -52,6 +53,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11439342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f05e3a6c8939b4ca15d236ff8bd36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11475288
 MonoBehaviour:
   m_ObjectHideFlags: 1
