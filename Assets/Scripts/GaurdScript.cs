@@ -20,6 +20,9 @@ public class GaurdScript : MonoBehaviour {
 
 	private float old_x;
 
+	private int facing_right;
+	private int facing_left;
+
 	// Use this for initialization
 	void Start () {
 		frometh = transform.position;
@@ -28,6 +31,8 @@ public class GaurdScript : MonoBehaviour {
 		animator = this.GetComponent<Animator>();
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		old_x = transform.position.x;
+		facing_right = 1;
+		facing_left = 0;
 	}
 
 	
@@ -37,11 +42,15 @@ public class GaurdScript : MonoBehaviour {
 		transform.position = Vector3.Lerp(frometh, untoeth,Mathf.SmoothStep(0f,1f,Mathf.PingPong(Time.time/secondsForOneLength, 1f)));
 
 		if (old_x > transform.position.x) {
-			animator.SetInteger ("Direction", 3);
+			animator.SetInteger ("Direction", 3); // LEft
 			//animator.SetFloat ("Direction", 2);
+			facing_right = 0;
+			facing_left = 1;
 		} else if (old_x < transform.position.x) {
-			animator.SetInteger ("Direction", 2);
+			animator.SetInteger ("Direction", 2); // Right
 			//animator.SetFloat ("Direction", 1);
+			facing_right = 1;
+			facing_left = 0;
 		} else {
 			animator.SetInteger ("Direction", 1);
 		}
@@ -51,10 +60,10 @@ public class GaurdScript : MonoBehaviour {
 			playerCloseEnough = true;
 
 			if (bulletCooldown == 0) {
-				Instantiate(bullet, transform.position+(new Vector3(0, -.1f) *player.localScale.y + new Vector3(.60f,0,0)), Quaternion.identity);
-				GameObject par = Instantiate(particle, transform.position+(new Vector3(0, -.1f) *player.localScale.y + new Vector3(.60f,0,0)) , Quaternion.identity) as GameObject;
+				Instantiate(bullet, transform.position+(new Vector3(0, -.1f) *player.localScale.y + new Vector3(.60f,0,0) * facing_right + new Vector3(-.60f,0,0) * facing_left), Quaternion.identity);
+				GameObject par = Instantiate(particle, transform.position+(new Vector3(0, -.1f) *player.localScale.y + new Vector3(.60f,0,0) * facing_right + new Vector3(-.60f,0,0) * facing_left) , Quaternion.identity) as GameObject;
 				par.transform.parent = transform;
-				bulletCooldown = 30;
+				bulletCooldown = 50;
 			}
 			if (bulletCooldown > 0) {
 				bulletCooldown--;
