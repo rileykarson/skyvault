@@ -3,7 +3,6 @@ using System.Collections;
 
 public class LevelFinished : MonoBehaviour {
 
-	public string SceneName;
 	private Animator m_Anim;
 	private int countdown = 51;
 
@@ -32,8 +31,6 @@ public class LevelFinished : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (1);
 			Application.LoadLevel ("NextLevel");
-			yield return new WaitForSeconds (5);
-			Application.LoadLevel (SceneName);
 		}
 	}
 }
