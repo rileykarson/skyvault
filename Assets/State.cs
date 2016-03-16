@@ -24,7 +24,6 @@ public class State : MonoBehaviour {
 	}
 
 	public static void loselevel(){
-		Debug.Log ("hi");
 		currentScore = -1000;
 	}
 
