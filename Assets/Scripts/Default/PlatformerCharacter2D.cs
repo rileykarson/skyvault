@@ -19,6 +19,8 @@ using UnityEngine;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		private bool bounce = false;
 
+		public AudioClip HitGround = new AudioClip();
+
         private void Awake()
         {
             // Setting up references.
@@ -42,9 +44,12 @@ using UnityEngine;
 				if (colliders [i].gameObject != gameObject) {
 					m_Grounded = true;
 				}
-			if (colliders [i].gameObject.tag == "Bouncy") {
-				bounce = true;
-			}
+				if (colliders [i].gameObject.tag == "Floor") {
+					//AudioSource.PlayClipAtPoint (HitGround, new Vector3 (0, 0, 0));
+				}
+				if (colliders [i].gameObject.tag == "Bouncy") {
+					bounce = true;
+				}
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 

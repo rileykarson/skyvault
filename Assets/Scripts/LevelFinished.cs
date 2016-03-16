@@ -30,7 +30,7 @@ public class LevelFinished : MonoBehaviour {
 				countdown--;
 			}
 			yield return new WaitForSeconds (1);
-			Application.LoadLevel ("NextLevel");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("NextLevel");
 		}
 	}
 }
