@@ -3,7 +3,6 @@ using System.Collections;
 
 public class LevelFinished : MonoBehaviour {
 
-	public string SceneName;
 	private Animator m_Anim;
 	private int countdown = 51;
 
@@ -14,7 +13,7 @@ public class LevelFinished : MonoBehaviour {
 
 	void FixedUpdate(){
 		if (countdown == 0) {
-			Application.LoadLevel (SceneName);
+			m_Anim.SetFloat ("Door_Open", 2);
 		}
 		if (countdown == 40) {
 			m_Anim.SetFloat ("Door_Open", 1);
@@ -24,12 +23,14 @@ public class LevelFinished : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
+	IEnumerator OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Player") {
 			if (countdown == 51) {
 				countdown--;
 			}
+			yield return new WaitForSeconds (1);
+			Application.LoadLevel ("NextLevel");
 		}
 	}
 }

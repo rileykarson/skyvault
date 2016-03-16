@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurretLaser: {fileID: 8300000, guid: 2c42d5edcc9014519930305411d09a33, type: 3}
+  particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
 --- !u!212 &21259940
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -144,6 +145,10 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183300}
