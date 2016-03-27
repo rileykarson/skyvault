@@ -402,7 +402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429164, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 183816, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_Name
@@ -943,7 +943,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429164, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 183816, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_Name
@@ -1919,7 +1919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429164, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
@@ -2573,7 +2573,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 401b5ce8b828e40debe876c3fb051e28, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3061,7 +3061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429164, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 183816, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_Name
@@ -3153,7 +3153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429164, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 183816, guid: 7de600b830c0f18468ef0d499161f0ef, type: 2}
       propertyPath: m_Name
@@ -4941,6 +4941,10 @@ Prefab:
       propertyPath: godmode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11418516, guid: 534a8374121bfbc43b093b083235b916, type: 2}
+      propertyPath: Flip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd3543019bb064a95966ab96ea0df006, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 534a8374121bfbc43b093b083235b916, type: 2}
   m_IsPrefabParent: 0
