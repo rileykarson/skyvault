@@ -7,7 +7,7 @@ public class HitDestructibleBlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		crack2 = GameObject.Find ("crack2");
+//		crack2 = GameObject.Find ("crack2");
 	}
 	
 	// Update is called once per frame
