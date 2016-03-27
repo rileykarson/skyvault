@@ -35,6 +35,31 @@ public class GaurdScript : MonoBehaviour {
 		facing_left = 0;
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		Debug.Log ("one");
+		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Hazard")) {
+			Debug.Log ("two");
+			if (collision.collider.gameObject.tag != "Bullet") {
+				Debug.Log ("yo yo");
+				Destroy(gameObject);
+			}
+		}
+	}
+
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		Debug.Log ("One one");
+		if (collision.gameObject.layer == LayerMask.NameToLayer ("Hazard")) {
+			Debug.Log ("two two");
+			if (collision.gameObject.tag != "Bullet") {
+				Debug.Log ("yo yo yoey");
+				Destroy(gameObject);
+			}
+		}
+	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -81,11 +106,7 @@ public class GaurdScript : MonoBehaviour {
 
 
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
+		
 
 
 }

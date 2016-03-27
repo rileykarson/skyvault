@@ -14,11 +14,12 @@ public class PassCollisionToParent : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D( Collider2D collision) {
-		//this.collider2D.("OnCollisionEnter2D",collision);
-		//this.gameObject.
+		AcidFlip acid = GetComponentInParent<AcidFlip>();
+		acid.collision2 (collision);
 	}
 
 	void OnCollisionEnter2D( Collision2D collision) {
-		//this.collider2D.attachedRigidbody.SendMessage("OnCollisionEnter2D",collision);
+		AcidFlip acid = GetComponentInParent <AcidFlip>();
+		acid.collision2 (collision);
 	}
 }

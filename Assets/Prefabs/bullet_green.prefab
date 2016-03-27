@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11497012}
   m_Layer: 10
   m_Name: bullet_green
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,10 @@ Prefab:
       propertyPath: particle
       value: 
       objectReference: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183300}

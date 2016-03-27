@@ -10,6 +10,7 @@ TagManager:
   - MovingGoo
   - Bouncy
   - MovingAcid
+  - Bullet
   layers:
   - Default
   - TransparentFX
