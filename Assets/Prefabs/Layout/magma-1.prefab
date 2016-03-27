@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 429164}
   - 212: {fileID: 21244142}
   - 61: {fileID: 6101180}
+  - 114: {fileID: 11410748}
   m_Layer: 0
   m_Name: magma-1
   m_TagString: Untagged
@@ -129,6 +130,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.1}
+--- !u!114 &11410748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec804c9a87c5e64cbaac773f7d20d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 169386, guid: 6fb46533f69c1e248a9bf03d9451a14e, type: 2}
 --- !u!212 &21244142
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -165,7 +178,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 169386, guid: 6fb46533f69c1e248a9bf03d9451a14e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183816}

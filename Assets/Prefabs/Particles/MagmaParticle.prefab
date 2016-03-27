@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400756}
   - 198: {fileID: 19845866}
   - 199: {fileID: 19914446}
+  - 114: {fileID: 11403966}
   m_Layer: 0
   m_Name: MagmaParticle
   m_TagString: Untagged
@@ -29,6 +30,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11403966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e13f4b9a360273409c2e928b6e16b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19845866
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -244,7 +256,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294910208
+        rgba: 4278190335
       minMaxState: 0
     startSize:
       scalar: 1
@@ -1575,7 +1587,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169386}
