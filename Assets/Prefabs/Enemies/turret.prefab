@@ -60,7 +60,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0.06, y: -0.1}
   serializedVersion: 2
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 183300, guid: 16b82e6ea940f4c41b718e7cc43c5c36, type: 2}
   playerObject: {fileID: 0}
+  fixedTurret: 0
 --- !u!212 &21234058
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -164,6 +165,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

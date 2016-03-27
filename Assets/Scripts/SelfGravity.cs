@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SelfGravity : MonoBehaviour {
 
+	public AudioClip Flip = new AudioClip();
+
 	[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 	private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -46,6 +48,7 @@ public class SelfGravity : MonoBehaviour {
 		}
 		if ((Input.GetKey("q") || Input.GetMouseButton(1)) && cooldown == 0 && m_Grounded) {
 			//Debug.Log ("gravity halp");
+			AudioSource.PlayClipAtPoint (Flip, new Vector3 (0, 0, 0));
 			flipping = true;
 			body.gravityScale *= -1;
 			cooldown = 25;
