@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DestroyDestructibleBlock : MonoBehaviour {
 
+	public GameObject particle;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -25,6 +27,7 @@ public class DestroyDestructibleBlock : MonoBehaviour {
 	{
 		if (collision.gameObject.layer == LayerMask.NameToLayer("Hazard")) {
 			Destroy (gameObject);
+			Instantiate(particle, transform.position, Quaternion.identity);
 		}
 	}
 }
