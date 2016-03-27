@@ -596,7 +596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11403790, guid: c45e8507bea535d4d83558c888510617, type: 2}
       propertyPath: nextlevel
-      value: StartScene
+      value: StartScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45e8507bea535d4d83558c888510617, type: 2}
