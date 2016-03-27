@@ -26,6 +26,34 @@ public class GooFlip : MonoBehaviour {
 
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "RayShot") {
+
+			Vector3 playerPos = transform.position;
+			float xCoord = playerPos.x;
+			float yCoord;
+			float zCoord = playerPos.z;
+
+			GameObject g;
+			Rigidbody2D body;
+			if (transform.localScale.y >= 0) {
+				yCoord = playerPos.y + 1.1f;
+				g = (GameObject)Instantiate (go, new Vector3(xCoord, yCoord, zCoord), Quaternion.identity);
+				body = g.GetComponent<Rigidbody2D> ();
+				body.gravityScale *= -1;
+			} else {
+				yCoord = playerPos.y - 1.1f;
+				g = (GameObject)Instantiate (go, new Vector3(xCoord, yCoord, zCoord), Quaternion.identity);
+				body = g.GetComponent<Rigidbody2D> ();
+			}
+
+			Destroy(gameObject);
+			Instantiate (noGoo, playerPos, Quaternion.identity);
+
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "RayShot") {
