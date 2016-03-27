@@ -169,7 +169,7 @@ GameObject:
   - 61: {fileID: 156978858}
   m_Layer: 12
   m_Name: floor-tile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,7 @@ GameObject:
   - 61: {fileID: 304206962}
   m_Layer: 12
   m_Name: floor-tile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -910,6 +910,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11426632, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
+      propertyPath: crack2
+      value: 
+      objectReference: {fileID: 119352, guid: 6a41ba375e2464f3187f1eda44644720, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
   m_IsPrefabParent: 0
@@ -1468,7 +1472,7 @@ GameObject:
   - 61: {fileID: 892059267}
   m_Layer: 12
   m_Name: floor-tile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2010,6 +2014,10 @@ Prefab:
       propertyPath: m_Name
       value: crack1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11426632, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
+      propertyPath: crack2
+      value: 
+      objectReference: {fileID: 119352, guid: 6a41ba375e2464f3187f1eda44644720, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
   m_IsPrefabParent: 0
@@ -2618,7 +2626,7 @@ GameObject:
   - 61: {fileID: 1274192759}
   m_Layer: 12
   m_Name: floor-tile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2899,6 +2907,10 @@ Prefab:
       propertyPath: m_Name
       value: crack1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 11426632, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
+      propertyPath: crack2
+      value: 
+      objectReference: {fileID: 119352, guid: 6a41ba375e2464f3187f1eda44644720, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abdf61167ecc14b4088213c5ba6f3471, type: 2}
   m_IsPrefabParent: 0
@@ -3783,6 +3795,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 137748, guid: bde477166c0b8154d97b3b6c69ba35a3, type: 2}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bde477166c0b8154d97b3b6c69ba35a3, type: 2}
   m_IsPrefabParent: 0
@@ -4023,7 +4039,7 @@ GameObject:
   - 61: {fileID: 1936405930}
   m_Layer: 12
   m_Name: floor-tile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
