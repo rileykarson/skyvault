@@ -54,11 +54,9 @@ public class TurretScript : MonoBehaviour
 			turretEnabled = (angle > 135) && (angle < 180);
 		} else {
 			turretEnabled = Vector3.Distance (playerPos, transform.position) < 10;
-			Debug.Log ("Regular "+ angle);
 
 			if (line2D.y > 0) {
 				if (line2D.x > 0) {
-					Debug.Log ("Blend 7 *");
 					xCoord = 0.48f;
 					yCoord = 0.4f;
 					m_Anim.SetFloat ("Blend", 7);
@@ -66,98 +64,68 @@ public class TurretScript : MonoBehaviour
 					xCoord = -0.48f;
 					yCoord = 0.4f;
 					m_Anim.SetFloat ("Blend", 1);
-					Debug.Log ("Blend 1 *");
 				}
 			} else if (angle > 135) {
 				xCoord = -0.48f;
 				yCoord = 0.4f;
 				m_Anim.SetFloat ("Blend", 1);
-				Debug.Log ("Blend 1");
-
 			} else if (angle > 117) {
 				xCoord = -0.32f;
 				yCoord = 0.46f;
 				m_Anim.SetFloat ("Blend", 2);
-				Debug.Log ("Blend 2");
-
 			} else if (angle > 99) {
 				xCoord = -0.16f;
 				yCoord = 0.52f;
 				m_Anim.SetFloat ("Blend", 3);
-				Debug.Log ("Blend 3");
-
 			} else if (angle > 81) {
 				xCoord = 0;
 				yCoord = 0.58f;
 				m_Anim.SetFloat ("Blend", 4);
-				Debug.Log ("Blend 4");
-
 			} else if (angle > 63) {
 				xCoord = 0.16f;
 				yCoord = 0.52f;
 				m_Anim.SetFloat ("Blend", 5);
-				Debug.Log ("Blend 5");
-
 			} else if (angle > 45) {
 				xCoord = 0.32f;
 				yCoord = 0.46f;
 				m_Anim.SetFloat ("Blend", 6);
-				Debug.Log ("Blend 6");
-
 			} else {
 				xCoord = 0.48f;
 				yCoord = 0.4f;
 				m_Anim.SetFloat ("Blend", 7);
-				Debug.Log ("Blend 7");
-
 			}	
 		}
 
 		if (transform.localScale.y < 0) { // upside down
-			Debug.Log ("Flipped "+ angle);
 
 			if (angle > 120) {
 				xCoord = -0.48f;
 				yCoord = 0.4f;
 				m_Anim.SetFloat ("Blend", 1);
-				Debug.Log ("Blend 1");
-
 			} else if (angle > 90) {
 				xCoord = -0.32f;
 				yCoord = 0.46f;
 				m_Anim.SetFloat ("Blend", 2);
-				Debug.Log ("Blend 2");
-
 			} else if (angle > 70) {
 				xCoord = -0.16f;
 				yCoord = 0.52f;
 				m_Anim.SetFloat ("Blend", 3);
-				Debug.Log ("Blend 3");
-
 			} else if (angle > 40) {
 				xCoord = 0;
 				yCoord = 0.58f;
 				m_Anim.SetFloat ("Blend", 4);
-				Debug.Log ("Blend 4");
-
 			} else if (angle > 20) {
 				xCoord = 0.16f;
 				yCoord = 0.52f;
 				m_Anim.SetFloat ("Blend", 5);
-				Debug.Log ("Blend 5");
-
 			} else if (angle > 0) {
 				xCoord = 0.32f;
 				yCoord = 0.46f;
 				m_Anim.SetFloat ("Blend", 6);
-				Debug.Log ("Blend 6");
-
 			} else {
 				xCoord = 0.48f;
 				yCoord = 0.4f;
 				m_Anim.SetFloat ("Blend", 7);
-				Debug.Log ("Blend 7");
-
 			}
 			yCoord = -yCoord;
 		}
