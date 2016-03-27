@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783b9e66c1b6b4e08be248364cf45d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crack2: {fileID: 0}
+  crack2: {fileID: 119352, guid: 6a41ba375e2464f3187f1eda44644720, type: 2}
 --- !u!212 &21248540
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +92,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: crack2
+      value: 
+      objectReference: {fileID: 119352, guid: 6a41ba375e2464f3187f1eda44644720, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106668}
