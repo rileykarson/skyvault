@@ -37,7 +37,17 @@ public class TurretBulletScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-		Instantiate(particle, transform.position, Quaternion.identity);
+		if (collision.gameObject.tag != "Guard") {
+			Destroy (gameObject);
+			Instantiate (particle, transform.position, Quaternion.identity);
+		}
     }
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag != "Guard") {
+			Destroy(gameObject);
+			Instantiate(particle, transform.position, Quaternion.identity);
+		}
+	}
 }

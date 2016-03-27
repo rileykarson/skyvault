@@ -25,4 +25,15 @@ public class HitDestructibleBlock : MonoBehaviour {
 			Instantiate (crack2, new Vector3(x, y, z), Quaternion.identity);
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Hazard")) {
+			Destroy (gameObject);
+			float x = gameObject.transform.position.x;
+			float y = gameObject.transform.position.y;
+			float z = gameObject.transform.position.z;
+			Instantiate (crack2, new Vector3(x, y, z), Quaternion.identity);
+		}
+	}
 }

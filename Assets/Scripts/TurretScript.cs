@@ -2,7 +2,8 @@
 using System.Collections;
 
 
-public class TurretScript : MonoBehaviour {
+public class TurretScript : MonoBehaviour
+{
 
 	int bulletCooldown = 0;
 	public GameObject bullet;
@@ -11,21 +12,24 @@ public class TurretScript : MonoBehaviour {
 	public bool fixedTurret = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		bulletCooldown = 0;
 		if (!fixedTurret) {
-			m_Anim = GetComponent<Animator>();
+			m_Anim = GetComponent<Animator> ();
 		}
-		playerObject = GameObject.Find("player-character");
+		playerObject = GameObject.Find ("player-character");
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
 
-	void FixedUpdate()
+	void FixedUpdate ()
 	{
+
 		float xCoord = 0;
 		float yCoord = 0;
 		float zCoord = 0;
@@ -43,17 +47,18 @@ public class TurretScript : MonoBehaviour {
 		forward2D.x = forward.x + 1;
 		forward2D.y = forward.y;
 
-		float angle = Vector2.Angle(line2D, forward2D);
+		float angle = Vector2.Angle (line2D, forward2D);
 		if (fixedTurret == true) {
 			xCoord = -0.6f;
 			yCoord = 0.1f;
 			turretEnabled = (angle > 135) && (angle < 180);
 		} else {
-
 			turretEnabled = Vector3.Distance (playerPos, transform.position) < 10;
+			Debug.Log ("Regular "+ angle);
 
-			if (line2D.y < 0) {
+			if (line2D.y > 0) {
 				if (line2D.x > 0) {
+					Debug.Log ("Blend 7 *");
 					xCoord = 0.48f;
 					yCoord = 0.4f;
 					m_Anim.SetFloat ("Blend", 7);
@@ -61,44 +66,108 @@ public class TurretScript : MonoBehaviour {
 					xCoord = -0.48f;
 					yCoord = 0.4f;
 					m_Anim.SetFloat ("Blend", 1);
+					Debug.Log ("Blend 1 *");
 				}
 			} else if (angle > 135) {
 				xCoord = -0.48f;
 				yCoord = 0.4f;
-				m_Anim.SetFloat("Blend", 1);
+				m_Anim.SetFloat ("Blend", 1);
+				Debug.Log ("Blend 1");
+
 			} else if (angle > 117) {
 				xCoord = -0.32f;
 				yCoord = 0.46f;
-				m_Anim.SetFloat("Blend", 2);
+				m_Anim.SetFloat ("Blend", 2);
+				Debug.Log ("Blend 2");
+
 			} else if (angle > 99) {
 				xCoord = -0.16f;
 				yCoord = 0.52f;
-				m_Anim.SetFloat("Blend", 3);
+				m_Anim.SetFloat ("Blend", 3);
+				Debug.Log ("Blend 3");
+
 			} else if (angle > 81) {
 				xCoord = 0;
 				yCoord = 0.58f;
-				m_Anim.SetFloat("Blend", 4);
+				m_Anim.SetFloat ("Blend", 4);
+				Debug.Log ("Blend 4");
+
 			} else if (angle > 63) {
 				xCoord = 0.16f;
 				yCoord = 0.52f;
-				m_Anim.SetFloat("Blend", 5);
+				m_Anim.SetFloat ("Blend", 5);
+				Debug.Log ("Blend 5");
+
 			} else if (angle > 45) {
 				xCoord = 0.32f;
 				yCoord = 0.46f;
-				m_Anim.SetFloat("Blend", 6);
+				m_Anim.SetFloat ("Blend", 6);
+				Debug.Log ("Blend 6");
+
 			} else {
 				xCoord = 0.48f;
 				yCoord = 0.4f;
-				m_Anim.SetFloat("Blend", 7);
-			}
+				m_Anim.SetFloat ("Blend", 7);
+				Debug.Log ("Blend 7");
+
+			}	
 		}
+
+		if (transform.localScale.y < 0) { // upside down
+			Debug.Log ("Flipped "+ angle);
+
+			if (angle > 120) {
+				xCoord = -0.48f;
+				yCoord = 0.4f;
+				m_Anim.SetFloat ("Blend", 1);
+				Debug.Log ("Blend 1");
+
+			} else if (angle > 90) {
+				xCoord = -0.32f;
+				yCoord = 0.46f;
+				m_Anim.SetFloat ("Blend", 2);
+				Debug.Log ("Blend 2");
+
+			} else if (angle > 70) {
+				xCoord = -0.16f;
+				yCoord = 0.52f;
+				m_Anim.SetFloat ("Blend", 3);
+				Debug.Log ("Blend 3");
+
+			} else if (angle > 40) {
+				xCoord = 0;
+				yCoord = 0.58f;
+				m_Anim.SetFloat ("Blend", 4);
+				Debug.Log ("Blend 4");
+
+			} else if (angle > 20) {
+				xCoord = 0.16f;
+				yCoord = 0.52f;
+				m_Anim.SetFloat ("Blend", 5);
+				Debug.Log ("Blend 5");
+
+			} else if (angle > 0) {
+				xCoord = 0.32f;
+				yCoord = 0.46f;
+				m_Anim.SetFloat ("Blend", 6);
+				Debug.Log ("Blend 6");
+
+			} else {
+				xCoord = 0.48f;
+				yCoord = 0.4f;
+				m_Anim.SetFloat ("Blend", 7);
+				Debug.Log ("Blend 7");
+
+			}
+			yCoord = -yCoord;
+		}
+
 		if (bulletCooldown == 0) {
 			if (turretEnabled) {
 				Instantiate (bullet, transform.position + new Vector3 (xCoord, yCoord, zCoord), Quaternion.identity);
 				bulletCooldown = 100;
 			}
-		}
-		else {
+		} else {
 			bulletCooldown--;
 		}
 	}

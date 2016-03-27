@@ -9,7 +9,7 @@ public class RigidRayAffected : MonoBehaviour {
 		body = gameObject.GetComponent<Rigidbody2D> ();
 	}
 	
-	// Update is called once per frame
+	// Update is called onc e per frame
 	void Update () {
 	
 	}
@@ -18,6 +18,7 @@ public class RigidRayAffected : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "RayShot") {
 			body.gravityScale *= -1;
+			body.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y*-1, transform.localScale.z);
 		}
 	}
 }
