@@ -15,7 +15,7 @@ GameObject:
   - 61: {fileID: 6105530}
   m_Layer: 0
   m_Name: SecurityWalkRight_100x200
-  m_TagString: Untagged
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   player: {fileID: 417702}
   bullet: {fileID: 183300, guid: 16b82e6ea940f4c41b718e7cc43c5c36, type: 2}
   particle: {fileID: 155818, guid: ddd07708a0fa40249bc5a555d9f1b42a, type: 2}
+  playerObject: {fileID: 0}
 --- !u!212 &21235558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -139,6 +140,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 417702}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Guard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178504}

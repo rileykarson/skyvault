@@ -11,6 +11,8 @@ public class GaurdScript : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject particle;
 
+	public GameObject playerObject;
+
 	private Rigidbody2D m_Rigidbody2D;
 	private Animator animator;
 
@@ -33,15 +35,14 @@ public class GaurdScript : MonoBehaviour {
 		old_x = transform.position.x;
 		facing_right = 1;
 		facing_left = 0;
+
+		playerObject = GameObject.Find ("player-character");
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		Debug.Log ("one");
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Hazard")) {
-			Debug.Log ("two");
 			if (collision.collider.gameObject.tag != "Bullet") {
-				Debug.Log ("yo yo");
 				Destroy(gameObject);
 			}
 		}
@@ -50,11 +51,8 @@ public class GaurdScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		Debug.Log ("One one");
 		if (collision.gameObject.layer == LayerMask.NameToLayer ("Hazard")) {
-			Debug.Log ("two two");
 			if (collision.gameObject.tag != "Bullet") {
-				Debug.Log ("yo yo yoey");
 				Destroy(gameObject);
 			}
 		}
@@ -81,7 +79,7 @@ public class GaurdScript : MonoBehaviour {
 		}
 		old_x = transform.position.x;
 			
-		if(Vector3.Distance(transform.position, player.position) < distance){
+		if(Vector3.Distance(transform.position, playerObject.transform.position) < distance){
 			playerCloseEnough = true;
 
 			if (bulletCooldown == 0) {
