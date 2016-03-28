@@ -128,7 +128,8 @@ Prefab:
       propertyPath: m_Name
       value: level-finished (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11453782, guid: e570701990b8e474f9ee6df84e43bf6f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e570701990b8e474f9ee6df84e43bf6f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &383391871
@@ -186,7 +187,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 425046, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425046, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
       propertyPath: m_LocalPosition.y
@@ -214,7 +215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425046, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6113832, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
       propertyPath: m_IsTrigger
@@ -224,6 +225,10 @@ Prefab:
       propertyPath: audioObj
       value: 
       objectReference: {fileID: 131014, guid: 8386fa2312124b84492bba0d11e607af, type: 2}
+    - target: {fileID: 425046, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd2e999f39138d4bbd010bda8443134, type: 2}
   m_IsPrefabParent: 0
@@ -273,6 +278,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24c7ec2543bd38844bb5e063be0bf9d0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &669812347 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 169612, guid: e570701990b8e474f9ee6df84e43bf6f, type: 2}
+  m_PrefabInternal: {fileID: 169764651}
+--- !u!114 &669812348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669812347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d9ce77905d0c54e94aadec335f6e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &875733290
 Prefab:
   m_ObjectHideFlags: 0
@@ -546,7 +566,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490860, guid: 24c7ec2543bd38844bb5e063be0bf9d0, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24c7ec2543bd38844bb5e063be0bf9d0, type: 2}
@@ -926,11 +946,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 467920, guid: 534a8374121bfbc43b093b083235b916, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.96
       objectReference: {fileID: 0}
     - target: {fileID: 467920, guid: 534a8374121bfbc43b093b083235b916, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 467920, guid: 534a8374121bfbc43b093b083235b916, type: 2}
       propertyPath: m_LocalPosition.z
@@ -954,7 +974,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467920, guid: 534a8374121bfbc43b093b083235b916, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11471482, guid: 534a8374121bfbc43b093b083235b916, type: 2}
       propertyPath: m_WhatIsGround.m_Bits
