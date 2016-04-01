@@ -31,9 +31,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 	// For determining which way the player is currently facing.
 	private bool bounce = false;
 
-	public AudioClip HitGround = new AudioClip ();
-	public Boolean playSound = false;
-
 	private void Awake ()
 	{
 		// Setting up references.
@@ -55,10 +52,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 		for (int i = 0; i < colliders.Length; i++) {
 			if (colliders [i].gameObject != gameObject) {
 				m_Grounded = true;
-			}
-			if (colliders [i].gameObject.tag == "Floor" && playSound) {
-				AudioSource.PlayClipAtPoint (HitGround, new Vector3 (0, 0, 0));
-				playSound = false;
 			}
 			if (colliders [i].gameObject.tag == "Bouncy") {
 				bounce = true;
@@ -134,8 +127,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 			if (bounce || (m_Rigidbody2D.velocity.y <= .1f && m_Rigidbody2D.velocity.y >= -.1f)) {
 				m_Rigidbody2D.AddForce (new Vector2 (0f, m_JumpForce) * getVerticalFlip ());
 			}
-		} else if (jump) {
-			playSound = true;
 		}
 	}
 
