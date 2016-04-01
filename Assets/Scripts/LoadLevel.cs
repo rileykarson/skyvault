@@ -7,7 +7,7 @@ public class LoadLevel : MonoBehaviour {
 	public string levelToLoad;
 
 	public void loadLevel(){
-		if (levelToLoad == "StartScene") {
+		if (levelToLoad == "StartScreen") {
 			State.score = 0;
 			State.currentScore = 0;
 		}
